@@ -11,11 +11,16 @@
     font-family: Roboto;
 }
 
+body{
+    height: 100vh;
+}
+
 /* HEADER / NAVBAR */
 
 nav{
     height: 80px;
     width: 100%;
+    padding: 0px 50px;
 }
 
 label.logo{
@@ -42,7 +47,7 @@ nav ul li a{
     font-size: 17px;
     padding: 7px 13px;
     border-radius: 3px;
-    text-transform: uppercase;
+    
 }
 
 a.active,a:hover{
@@ -114,31 +119,41 @@ a.active,a:hover{
 
 /* MAIN CONTENT */
 
-.conteudo1{
-    display: inline-block;
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
     align-items: center;
-    flex-direction: column;
+} 
+
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 1000px;
 }
 
-.conteudo1 h1{
+.conteudo-primario{
+    display: inline-block;
+    align-items: center;
+    flex-direction: column; 
+}
+
+.conteudo-primario h1{
     margin-bottom: 30px;
     font-size: 2.6em;
 }
 
-.conteudo2{
-    display: inline;
+.conteudo-imagem{
     
-}
-
-main{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: 100px;
 }
 
 main h1,p{
     color: #766F68;
+}
+
+main .container .conteudo-primario p{
+    font-size: 1.2em;
 }
 
 button{
@@ -159,10 +174,12 @@ button:hover{
 }
 
 img{
-    height: 380px;
+    height: 350px;
 }
 
-@media only screen and (max-width: 952px){
+/* MAIN CONTENT RESPONSIVO */
+
+ @media only screen and (max-width: 952px){
     main{
         display: flex;
         flex-direction: column-reverse;
@@ -183,13 +200,13 @@ img{
 }
 
 @media only screen and (max-width: 858px){
-    main{
+    .container{
         display: flex;
         flex-direction: column-reverse;
     }
 
     img{
-        height: 300px;
+        height: 250px;
     }
 
     main h1,p,button{
@@ -202,13 +219,27 @@ img{
 }
 
 @media only screen and (max-width: 600px){
-    main{
+    .container{
         display: flex;
         flex-direction: column-reverse;
     }
 
+    label.logo{
+        color: #D2872C;
+        font-size: 30px;
+        line-height: 80px;
+        padding: 0 40px;
+        font-weight: bold;
+    }
+
+    nav{
+        height: 80px;
+        width: 100%;
+        padding: 0px 25px;
+    }
+
     img{
-        height: 300px;
+        height: 200px;
     }
 
     main h1,p,button{
